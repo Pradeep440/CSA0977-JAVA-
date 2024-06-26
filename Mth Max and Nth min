@@ -1,0 +1,35 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class MaxMinFinder {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Sample input array
+        Integer[] array = {14, 16, 87, 36, 25, 89, 34};
+
+        // Sample values for M and N
+        int M = 1;
+        int N = 3;
+
+        // Sorting the array to find the Mth maximum and Nth minimum
+        Arrays.sort(array, Collections.reverseOrder());
+        int MthMax = array[M - 1];
+
+        Arrays.sort(array);
+        int NthMin = array[N - 1];
+
+        // Calculating sum and difference
+        int sum = MthMax + NthMin;
+        int difference = MthMax - NthMin;
+
+        // Printing the results
+        System.out.println(M + "st Maximum Number = " + MthMax);
+        System.out.println(N + "rd Minimum Number = " + NthMin);
+        System.out.println("Sum = " + sum);
+        System.out.println("Difference = " + difference);
+
+        scanner.close();
+    }
+}
